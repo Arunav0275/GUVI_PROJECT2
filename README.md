@@ -54,6 +54,7 @@ Confusion matrix shows most predictions are correct, with minor misclassificatio
 - scikit-learn – for confusion matrix and evaluation metrics
 
 ## 🚀How to run
-1. Clone Repository
-2. Install Dependencies(pip install tensorflow numpy matplotlib scikit-learn)
-3. Run the notebook.
+1. Download or Clone this Repository.
+2. Open the .ipynb notebook on Google Colab.
+3. Install Dependencies(pip install tensorflow numpy matplotlib scikit-learn).
+4. Run the notebook.
