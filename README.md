@@ -15,6 +15,8 @@ The model will be trained to learn patterns in handwritten digits and then predi
 - Load the MNIST dataset using tensorflow.keras.datasets.
 - Normalize pixel values (0–255 → 0–1) for better training stability.
 - Reshape inputs to (28, 28, 1) for CNN compatibility.
+- Introduce noise into the dataset.
+- Compare accuracies between Vanilla loss function and APL loss function over different noise levels.
 
 ### 2. Model Architecture (CNN)
 - Conv2D layers – extract features from the images.
@@ -26,22 +28,32 @@ The model will be trained to learn patterns in handwritten digits and then predi
 ### 3. Training
 - Compile model with:
   - Optimizer: Adam
-  - Loss: Sparse Categorical Crossentropy
+  - Loss:
+      - Sparse Categorical Crossentropy
+      - API Framework combining Sparse Categorical Crossentropy(Active Loss) and Reverse Crossentropy(Passive Loss)
   - Metric: Accuracy
 - Train for 10 epochs with validation on test set.
 
 ### 4. Evaluation
 - Confusion matrix to analyze misclassifications.
-- Accuracy score on test data (expected ~98%).
+- Accuracy score on test data.
 - Visualization of predictions with matplotlib.
 
 ## 📊 Results
-- Test Accuracy: ~98%
-- Example Prediction:
-  - Input image: resembles digit 7
-  - Predicted Digit: 7
-  - Model Accuracy: 98%
-    
+- Test Accuracy:
+    - On Sparse Categorical Crossentropy: ~99%
+    - On APL Framework: ~98%
+ 
 Confusion matrix shows most predictions are correct, with minor misclassifications between visually similar digits (e.g., 4 vs 9, 5 vs 6).
 
+## ⚙️ Technologies Used
+- Python 3.10
+- TensorFlow / Keras – for building and training CNN
+- NumPy – for numerical operations
+- Matplotlib – for visualization (predictions, accuracy plots)
+- scikit-learn – for confusion matrix and evaluation metrics
 
+## 🚀How to run
+1. Clone Repository
+2. Install Dependencies(pip install tensorflow numpy matplotlib scikit-learn)
+3. Run the notebook.
